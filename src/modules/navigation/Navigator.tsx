@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text } from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
 
 const RootStack = createStackNavigator();
 
@@ -29,22 +30,35 @@ const AccountScreen = () => {
 type Tab = {
   name: string;
   component: () => JSX.Element;
+  icon: JSX.Element;
 };
 
 const TABS: Tab[] = [
   {
     name: 'Home',
     component: HomeScreen,
+    icon: <Icon name='home' size={25} color='#000' />,
   },
   {
     name: 'Account',
     component: AccountScreen,
+    icon: <Icon name='user' size={25} color='#000' />,
   },
 ];
 
 const RootScreen = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={({ route }) => {
+        const tab = TABS.find((currTab) => currTab.name === route.name);
+
+        return {
+          tabBarIcon: () => {
+            return tab?.icon;
+          },
+        };
+      }}
+    >
       {TABS.map((tab) => {
         return (
           <Tab.Screen

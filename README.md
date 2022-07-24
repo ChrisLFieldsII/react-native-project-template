@@ -7,6 +7,7 @@ This template is useful for starting out w/ a scalable react native project.
 - [React Navigation](https://reactnavigation.org/): routing and navigation
 - [zustand](https://github.com/pmndrs/zustand): local state management
 - [react-query](https://github.com/tanstack/query): Hooks for fetching, caching and updating asynchronous data in React
+- [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation): icons
 
 ## Source code
 
