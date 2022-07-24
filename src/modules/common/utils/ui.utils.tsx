@@ -2,7 +2,6 @@ import React from 'react';
 import { ViewModelProps, DefaultModel } from '../types';
 
 type CreateViewInput<Model extends DefaultModel> = {
-  props: ViewModelProps<Model>;
   Success: (props: Model) => JSX.Element;
   Loading?: () => JSX.Element;
   Failure?: (props: { error: Error }) => JSX.Element;
