@@ -4,7 +4,9 @@ This template is useful for starting out w/ a scalable react native project.
 
 ## Dependencies
 
-- [React Navigation](https://reactnavigation.org/): used for routing and navigation
+- [React Navigation](https://reactnavigation.org/): routing and navigation
+- [zustand](https://github.com/pmndrs/zustand): local state management
+- [react-query](https://github.com/tanstack/query): Hooks for fetching, caching and updating asynchronous data in React
 
 ## Source code
 
