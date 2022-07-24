@@ -13,4 +13,7 @@ module.exports = {
       },
     },
   ],
+  rules: {
+    'jsx-quotes': ['warn', 'prefer-single'],
+  },
 };
