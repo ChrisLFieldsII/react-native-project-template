@@ -11,6 +11,7 @@
 import React from 'react';
 
 import { Navigator } from '~/modules/navigation';
+// import { Storybook } from '../.storybook/Storybook';
 
 const App = () => {
   return (
@@ -21,3 +22,5 @@ const App = () => {
 };
 
 export default App;
+
+// export default Storybook;
