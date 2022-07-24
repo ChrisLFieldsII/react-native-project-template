@@ -30,9 +30,11 @@ const AccountScreen = () => {
 type Tab = {
   name: string;
   component: () => JSX.Element;
+  // TODO: could improve this to be a function that takes in diff states like `isFocused`
   icon: JSX.Element;
 };
 
+/** @desc data structure to render bottom tab nav */
 const TABS: Tab[] = [
   {
     name: 'Home',
