@@ -8,6 +8,14 @@ This template is useful for starting out w/ a scalable react native project.
 - [zustand](https://github.com/pmndrs/zustand): local state management
 - [react-query](https://github.com/tanstack/query): Hooks for fetching, caching and updating asynchronous data in React
 - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation): icons
+- [storybook](https://storybook.js.org/): component driven development ftw!
+
+## File Naming Conventions
+
+Some files use a <filename>.<type>.<extension> format to help devs know exactly what the file is for. Similar to how Storybook uses `.stories` to recognize a story and testing frameworks like jest uses `.test` to know which files are tests.
+
+- `.utils` - these files house utility functions
+- `.types` - these files house type definitions
 
 ## Source code
 
