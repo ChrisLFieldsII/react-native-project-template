@@ -4,9 +4,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
 
-import { Text, Button } from '~/modules/common';
+import { Text } from '~/modules/common';
+import { HomeScreen } from '~/modules/home';
+import { Screen } from './navigation.types';
 
 const RootStack = createStackNavigator();
+const HomeStack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export const Navigator = () => {
   return (
@@ -18,13 +22,11 @@ export const Navigator = () => {
   );
 };
 
-const Tab = createBottomTabNavigator();
-
-const HomeScreen = () => {
+const HomeStackNavigator = () => {
   return (
-    <Button>
-      <Text>Home screen</Text>
-    </Button>
+    <HomeStack.Navigator>
+      <HomeStack.Screen name={Screen.Home} component={HomeScreen} />
+    </HomeStack.Navigator>
   );
 };
 
@@ -33,7 +35,7 @@ const AccountScreen = () => {
 };
 
 type Tab = {
-  name: string;
+  name: Screen;
   component: () => JSX.Element;
   // TODO: could improve this to be a function that takes in diff states like `isFocused`
   icon: JSX.Element;
@@ -42,12 +44,12 @@ type Tab = {
 /** @desc data structure to render bottom tab nav */
 const TABS: Tab[] = [
   {
-    name: 'Home',
-    component: HomeScreen,
+    name: Screen.HomeTab,
+    component: HomeStackNavigator,
     icon: <Icon name='home' size={25} color='#000' />,
   },
   {
-    name: 'Account',
+    name: Screen.AccountTab,
     component: AccountScreen,
     icon: <Icon name='user' size={25} color='#000' />,
   },
