@@ -9,14 +9,18 @@
  */
 
 import React from 'react';
+import { QueryClientProvider } from '@tanstack/react-query';
 
 import { Navigator } from '~/modules/navigation';
+import { queryClient } from '~/modules/common';
 // import { Storybook } from '../.storybook/Storybook';
 
 const App = () => {
   return (
     <>
-      <Navigator />
+      <QueryClientProvider client={queryClient}>
+        <Navigator />
+      </QueryClientProvider>
     </>
   );
 };
