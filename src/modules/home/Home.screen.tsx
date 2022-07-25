@@ -1,15 +1,13 @@
 import React from 'react';
-// import {  } from 'react-native';
 import type { StackScreenProps } from '@react-navigation/stack';
 import { HomeStackParamList, Screen } from '~/modules/navigation';
-import { View, Text } from '~/modules/common';
+import { useHomeScreen } from './hooks/useHomeScreen';
+import { HomeView } from './components';
 
 type HomeScreenProps = StackScreenProps<HomeStackParamList, Screen.Home>;
 
 export const HomeScreen = ({}: HomeScreenProps) => {
-  return (
-    <View>
-      <Text>Home Screennnn</Text>
-    </View>
-  );
+  const viewModel = useHomeScreen();
+
+  return <HomeView {...viewModel} />;
 };

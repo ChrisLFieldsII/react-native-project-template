@@ -16,6 +16,7 @@ Some files use a <filename>.<type>.<extension> format to help devs know exactly 
 
 - `.utils` - these files house utility functions
 - `.types` - these files house type definitions
+- `.api` - these files house async functions that retrieve data from apis
 
 ## Source code
 

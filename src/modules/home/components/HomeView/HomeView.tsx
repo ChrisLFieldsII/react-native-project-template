@@ -14,7 +14,6 @@ const Loading = () => {
 const Success = ({ title }: HomeModel) => {
   return (
     <>
-      <Text>Loaded Home!!</Text>
       <Text>{title}</Text>
     </>
   );
