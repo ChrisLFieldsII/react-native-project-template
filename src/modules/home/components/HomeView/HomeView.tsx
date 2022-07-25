@@ -6,7 +6,7 @@ import { HomeModel } from '../../home.types';
 const Loading = () => {
   return (
     <>
-      <Text>Loading Home...</Text>
+      <Text>Loading...</Text>
     </>
   );
 };

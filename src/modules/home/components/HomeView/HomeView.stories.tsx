@@ -10,7 +10,7 @@ const HomeViewMeta: ComponentMeta<typeof HomeView> = {
     // @ts-ignore - ts doesnt like that theres a model when status is `loading`, but we are just mocking.
     status: 'loading',
     model: {
-      title: 'Hello World',
+      title: 'Home View',
     },
     error: new Error('error fetching home contents'),
   },
