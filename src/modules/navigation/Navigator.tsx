@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
 
 import { Text } from '~/modules/common';
-import { HomeScreen } from '~/modules/home';
+import { HomeScreen } from '../../../templates/home';
 import { Screen } from './navigation.types';
 
 const RootStack = createStackNavigator();
