@@ -44,3 +44,4 @@ This template is composed of a few modules to get you started. You may need to r
 
 - `common` - This module contains common code that is shared across the whole project and other modules. Think your components like `buttons`, `text`, etc. Any generic utilities or types, etc. Your main `api` instance.
   - the `common` module already exports some of the `react-native` components. We wrap and re-export them to control their look throughout the app in one place! If we imports these components like `View, Text, Button, etc` directly from `react-native` everywhere, it will make it hard to do things like implement dark mode or change the font later.
+- `navigation` - This module pulls together all apps different screens to build a `Navigator`

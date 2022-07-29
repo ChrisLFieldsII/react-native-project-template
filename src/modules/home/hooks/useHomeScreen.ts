@@ -1,8 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import { HomeViewModelProps } from '../home.types';
+import { HomeViewModelProps } from '../types';
+import { transformHomeApiData } from '../utils';
 
 /**
- * @desc Hook to get Home screen view model.
+ * Hook to get Home screen view model.
  *
  * The query fetches data from your api, and transforms the api data to your frontend model
  * to de-couple app from api.
@@ -35,10 +36,10 @@ export const useHomeScreen = (): HomeViewModelProps => {
     };
   }
 
+  const model = transformHomeApiData(query.data);
+
   return {
     status: 'success',
-    model: {
-      title: query.data,
-    },
+    model,
   };
 };

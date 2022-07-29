@@ -1,3 +1,3 @@
 export * from './components';
-export * from './home.types';
-export * from './Home.screen';
+export * from './types';
+export * from './screens';

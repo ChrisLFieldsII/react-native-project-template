@@ -41,7 +41,7 @@ type Tab = {
   icon: JSX.Element;
 };
 
-/** @desc data structure to render bottom tab nav */
+/** data structure to render bottom tab nav */
 const TABS: Tab[] = [
   {
     name: Screen.HomeTab,

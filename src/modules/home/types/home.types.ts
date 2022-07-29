@@ -4,7 +4,7 @@
 import { ViewModelProps } from '~/modules/common';
 
 /**
- * @desc The model for the home screen
+ * The model for the home screen
  */
 export type HomeModel = {
   title: string;

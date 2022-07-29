@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Text, FailureProps, createView } from '~/modules/common';
-import { HomeModel } from '../../home.types';
+import { HomeModel } from '../../types';
 
 const Loading = () => {
   return (

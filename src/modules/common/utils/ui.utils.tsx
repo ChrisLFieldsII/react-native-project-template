@@ -11,7 +11,7 @@ type CreateViewInput<Model extends DefaultModel> = {
 export const RenderNull = () => null;
 
 /**
- * @desc Create a UI `View` given a `ViewModel` and components that represent different
+ * Create a UI `View` given a `ViewModel` and components that represent different
  * states like `Success`, `Loading`, `Empty`, `Failure`.
  */
 export const createView = <Model extends DefaultModel>(
