@@ -1,6 +1,6 @@
 import { Command, Flags } from '@oclif/core';
 import * as path from 'node:path';
-import * as fs from 'node:fs/promises';
+import * as fs from 'node:fs';
 import klaw from 'klaw';
 
 export default class GenerateScreenModule extends Command {
@@ -50,27 +50,32 @@ export default class GenerateScreenModule extends Command {
 
     this.log(JSON.stringify(templatePaths, null, 2));
 
-    const promises = templatePaths.map(async (currPath) => {
+    templatePaths.forEach((currPath) => {
       const isFile = currPath.includes('.');
+      const thePath = currPath
+        .replace(/home/g, moduleNameLower)
+        .replace(/Home/g, moduleNamePascal);
+
       // rename file contents
       if (isFile) {
-        const template = await fs.readFile(currPath, { encoding: 'utf8' });
+        const template = fs.readFileSync(currPath, { encoding: 'utf8' });
         const newContents = template
           .replace(/home/g, moduleNameLower)
           .replace(/Home/g, moduleNamePascal);
+
         // this.log(newContents);
+        fs.writeFileSync(thePath, newContents);
       }
 
       // rename dir name
       else {
-        const newPath = currPath
+        const dirPath = currPath
           .replace(/home/g, moduleNameLower)
           .replace(/Home/g, moduleNamePascal);
-        this.log(newPath);
+
+        // this.log(dirPath);
+        fs.mkdirSync(dirPath, { recursive: true });
       }
-      return currPath.replace(regex, moduleNameLower);
     });
-    const results = await Promise.all(promises);
-    // this.log(JSON.stringify(results, null, 2));
   }
 }
