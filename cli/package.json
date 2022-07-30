@@ -20,7 +20,8 @@
     "@oclif/core": "^1",
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.0.1",
-    "klaw": "^4.0.1"
+    "klaw": "^4.0.1",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@oclif/test": "^2",
