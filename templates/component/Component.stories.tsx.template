@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 
-import { ${Component} } from './${Component}.tsx';
+import { ${Component} } from './${Component}';
 
 const ${Component}Meta: ComponentMeta<typeof ${Component}> = {
   title: '${Component}',
