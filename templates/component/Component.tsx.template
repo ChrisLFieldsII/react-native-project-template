@@ -1,0 +1,15 @@
+import React from 'react';
+import {} from 'react-native';
+import { View, Text } from '~/modules/common';
+
+type ${Component}Props = {
+  
+};
+
+export const ${Component} = ({}: ${Component}Props) => {
+  return (
+    <View>
+      <Text>My ${Component}</Text>
+    </View>
+  );
+};

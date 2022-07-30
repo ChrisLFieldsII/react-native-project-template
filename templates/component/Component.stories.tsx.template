@@ -1,0 +1,22 @@
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+
+import { ${Component} } from './${Component}.tsx';
+
+const ${Component}Meta: ComponentMeta<typeof ${Component}> = {
+  title: '${Component}',
+  component: ${Component},
+  args: {
+
+  },
+  argTypes: {
+
+  },
+};
+
+export default ${Component}Meta;
+
+type ${Component}Story = ComponentStory<typeof ${Component}>;
+
+export const ${Component}Default: ${Component}Story = (args) => <${Component} {...args} />;
+

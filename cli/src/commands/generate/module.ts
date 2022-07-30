@@ -2,6 +2,7 @@ import { Command, Flags } from '@oclif/core';
 import * as path from 'node:path';
 import * as fs from 'node:fs';
 import klaw from 'klaw';
+import { pascalCase } from '../../utils';
 
 export default class GenerateScreenModule extends Command {
   static description = 'generate a new module';
@@ -20,8 +21,7 @@ export default class GenerateScreenModule extends Command {
   public async run(): Promise<void> {
     const { args, flags } = await this.parse(GenerateScreenModule);
     const moduleNameLower = args.name.toLowerCase();
-    const moduleNamePascal =
-      moduleNameLower[0].toUpperCase() + moduleNameLower.slice(1);
+    const moduleNamePascal = pascalCase(moduleNameLower);
 
     /** template path. dir contains files that want to copy */
     const rootTemplatePath = path.resolve(
