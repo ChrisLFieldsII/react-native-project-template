@@ -62,3 +62,6 @@ buck-out/
 /ios/Pods/
 /vendor/bundle/
 .storybook/storybook.requires.js
+
+# env vars
+.env

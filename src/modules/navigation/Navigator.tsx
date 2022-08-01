@@ -10,17 +10,7 @@ import { Screen } from './navigation.types';
 
 const RootStack = createStackNavigator();
 const HomeStack = createStackNavigator();
-const Tab = createBottomTabNavigator();
-
-export const Navigator = () => {
-  return (
-    <NavigationContainer>
-      <RootStack.Navigator>
-        <RootStack.Screen name='Root' component={RootScreen} />
-      </RootStack.Navigator>
-    </NavigationContainer>
-  );
-};
+const TabNav = createBottomTabNavigator();
 
 const HomeStackNavigator = () => {
   return (
@@ -57,7 +47,7 @@ const TABS: Tab[] = [
 
 const RootScreen = () => {
   return (
-    <Tab.Navigator
+    <TabNav.Navigator
       screenOptions={({ route }) => {
         const tab = TABS.find((currTab) => currTab.name === route.name);
 
@@ -70,13 +60,24 @@ const RootScreen = () => {
     >
       {TABS.map((tab) => {
         return (
-          <Tab.Screen
+          <TabNav.Screen
             key={tab.name}
             name={tab.name}
             component={tab.component}
           />
         );
       })}
-    </Tab.Navigator>
+    </TabNav.Navigator>
+  );
+};
+
+/** the entrypoint to app navigation */
+export const Navigator = () => {
+  return (
+    <NavigationContainer>
+      <RootStack.Navigator>
+        <RootStack.Screen name='Root' component={RootScreen} />
+      </RootStack.Navigator>
+    </NavigationContainer>
   );
 };

@@ -6,6 +6,11 @@
     "skipLibCheck": true,
     "paths": {
       "~/*": ["./src/*"]
-    }
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "src/modules/common/types",
+      "src/modules/env/types"
+    ]
   },
 }

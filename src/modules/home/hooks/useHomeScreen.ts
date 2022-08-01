@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { HomeViewModelProps } from '../types';
 import { transformHomeApiData } from '../utils';
+import { env } from '~/modules/env';
 
 /**
  * Hook to get Home screen view model.
@@ -18,7 +19,7 @@ export const useHomeScreen = (): HomeViewModelProps => {
           return reject(new Error('Error loading home screen'));
         }
 
-        resolve('Welcome to the home screen!');
+        resolve(env.HOME_MSG);
       }, 1000 * 2);
     });
   });
