@@ -1,5 +1,6 @@
 // import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import type { NavigatorScreenParams } from '@react-navigation/native';
+import type { StackNavigationProp } from '@react-navigation/stack';
 
 export enum Screen {
   Root = 'Root',
@@ -7,6 +8,7 @@ export enum Screen {
   Home = 'Home',
   AccountTab = 'AccountTab',
   Account = 'Account',
+  Debug = 'Debug',
 }
 
 export type HomeStackParamList = {
@@ -17,4 +19,7 @@ export type RootStackParamList = {
   [Screen.Root]: {
     [Screen.HomeTab]: NavigatorScreenParams<HomeStackParamList>;
   };
+  [Screen.Debug]: undefined;
 };
+
+export type Navigation = StackNavigationProp<RootStackParamList>;

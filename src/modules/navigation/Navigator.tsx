@@ -6,6 +6,8 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import { Text } from '~/modules/common';
 import { HomeScreen } from '~/modules/home';
+import { useDevMenu, DebugScreen } from '~/modules/debug';
+
 import { Screen } from './navigation.types';
 
 const RootStack = createStackNavigator();
@@ -46,6 +48,8 @@ const TABS: Tab[] = [
 ];
 
 const RootScreen = () => {
+  useDevMenu();
+
   return (
     <TabNav.Navigator
       screenOptions={({ route }) => {
@@ -77,6 +81,7 @@ export const Navigator = () => {
     <NavigationContainer>
       <RootStack.Navigator>
         <RootStack.Screen name='Root' component={RootScreen} />
+        <RootStack.Screen name={Screen.Debug} component={DebugScreen} />
       </RootStack.Navigator>
     </NavigationContainer>
   );
