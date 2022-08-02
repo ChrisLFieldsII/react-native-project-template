@@ -1,6 +1,12 @@
 import React from 'react';
-import { View as RNView, ViewProps as RNViewProps } from 'react-native';
+import {
+  View as RNView,
+  ViewProps as RNViewProps,
+  ViewStyle,
+} from 'react-native';
 
-export const View = (props: RNViewProps) => {
+export type ViewProps = RNViewProps & ViewStyle & {};
+
+export const View = (props: ViewProps) => {
   return <RNView {...props} />;
 };

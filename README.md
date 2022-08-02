@@ -12,11 +12,12 @@ This template is useful for starting out w/ a scalable react native project.
 
 ## File Naming Conventions
 
-Some files use a <filename>.<type>.<extension> format to help devs know exactly what the file is for. Similar to how Storybook uses `.stories` to recognize a story and testing frameworks like jest uses `.test` to know which files are tests.
+Some files use a `<filename>.<type>.<extension>` format to help devs know exactly what the file is for. Similar to how Storybook uses `.stories` to recognize a story and testing frameworks like jest uses `.test` to know which files are tests.
 
 - `.utils` - these files house utility functions
 - `.types` - these files house type definitions
 - `.api` - these files house async functions that retrieve data from apis
+- `.state` - houses logic for local state w/ zustand (or whichever state management solution you choose)
 
 ## Source code
 

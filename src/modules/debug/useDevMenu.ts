@@ -4,6 +4,26 @@ import { useNavigation } from '@react-navigation/native';
 
 import { Screen, Navigation } from '~/modules/navigation';
 
+type DevMenuItem = {
+  text: string;
+  onPress: (navigation: Navigation) => void;
+};
+
+const items: DevMenuItem[] = [
+  {
+    text: 'Go to Debug Screen',
+    onPress(navigation) {
+      navigation.navigate(Screen.Debug, undefined);
+    },
+  },
+  // {
+  //   text: 'Go to Storybook',
+  //   onPress(navigation) {
+  //     navigation.navigate(Screen.)
+  //   },
+  // }
+];
+
 /**
  * @desc hook to customize dev menu options
  */
@@ -15,9 +35,10 @@ export const useDevMenu = () => {
       return;
     }
 
-    DevSettings.addMenuItem('Go to Debug Screen', () => {
-      navigation.navigate(Screen.Debug, undefined);
+    items.forEach(({ onPress, text }) => {
+      DevSettings.addMenuItem(text, onPress.bind(undefined, navigation));
     });
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
