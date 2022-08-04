@@ -10,3 +10,5 @@ export type ViewProps = RNViewProps & ViewStyle & {};
 export const View = (props: ViewProps) => {
   return <RNView {...props} />;
 };
+
+export type { ViewStyle };
