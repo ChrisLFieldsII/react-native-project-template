@@ -16,12 +16,12 @@ const items: DevMenuItem[] = [
       navigation.navigate(Screen.Debug, undefined);
     },
   },
-  // {
-  //   text: 'Go to Storybook',
-  //   onPress(navigation) {
-  //     navigation.navigate(Screen.)
-  //   },
-  // }
+  {
+    text: 'Go to Storybook',
+    onPress(navigation) {
+      navigation.navigate(Screen.Storybook);
+    },
+  },
 ];
 
 /**

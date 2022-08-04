@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import { Text } from '~/modules/common';
 import { HomeScreen } from '~/modules/home';
 import { useDevMenu, DebugScreen } from '~/modules/debug';
+import { StorybookScreen } from '~/../.storybook/Storybook.screen';
 
 import { Screen } from './navigation.types';
 
@@ -82,6 +83,7 @@ export const Navigator = () => {
       <RootStack.Navigator>
         <RootStack.Screen name='Root' component={RootScreen} />
         <RootStack.Screen name={Screen.Debug} component={DebugScreen} />
+        <RootStack.Screen name={Screen.Storybook} component={StorybookScreen} />
       </RootStack.Navigator>
     </NavigationContainer>
   );

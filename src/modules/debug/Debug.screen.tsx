@@ -4,6 +4,7 @@ import { RootStackParamList, Screen } from '~/modules/navigation';
 
 import { Text, View, Button, Flex, Spacer } from '~/modules/common';
 import { EnvConfig, envTypes } from '~/modules/env';
+import { useNavigation } from '~/modules/navigation';
 
 import { useDebugStore } from './debug.state';
 import { Alert } from 'react-native';
@@ -106,12 +107,14 @@ const DebugKeyValues = () => {
 type DebugButtonsProps = {};
 
 const DebugButtons = ({}: DebugButtonsProps) => {
+  const navigation = useNavigation();
+
   // place debug btns here
   const btns: DebugBtn[] = [
     {
-      text: 'show alert',
+      text: 'Go to Storybook',
       onPress() {
-        Alert.alert('what up');
+        navigation.navigate(Screen.Storybook);
       },
     },
   ];

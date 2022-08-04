@@ -13,7 +13,6 @@ import { QueryClientProvider } from '@tanstack/react-query';
 
 import { Navigator } from '~/modules/navigation';
 import { queryClient } from '~/modules/common';
-import { Storybook } from '../.storybook/Storybook';
 
 const App = () => {
   return (
@@ -26,4 +25,3 @@ const App = () => {
 };
 
 export default App;
-// export default Storybook;

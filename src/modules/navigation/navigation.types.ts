@@ -9,6 +9,7 @@ export enum Screen {
   AccountTab = 'AccountTab',
   Account = 'Account',
   Debug = 'Debug',
+  Storybook = 'Storybook',
 }
 
 export type HomeStackParamList = {
@@ -20,6 +21,7 @@ export type RootStackParamList = {
     [Screen.HomeTab]: NavigatorScreenParams<HomeStackParamList>;
   };
   [Screen.Debug]: undefined;
+  [Screen.Storybook]: undefined;
 };
 
 export type Navigation = StackNavigationProp<RootStackParamList>;

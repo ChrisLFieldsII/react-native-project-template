@@ -6,10 +6,10 @@ import './storybook.requires';
 
 const StorybookUIRoot = getStorybookUI({});
 
-export default StorybookUIRoot;
-
 export const Storybook = () => (
   <View style={{ flex: 1 }}>
     <StorybookUIRoot />
   </View>
 );
+
+export default Storybook;
