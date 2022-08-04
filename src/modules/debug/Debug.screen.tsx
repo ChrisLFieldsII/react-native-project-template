@@ -5,6 +5,7 @@ import { RootStackParamList, Screen } from '~/modules/navigation';
 import { Text, View, Button, Flex, Spacer } from '~/modules/common';
 import { EnvConfig, envTypes } from '~/modules/env';
 import { useNavigation } from '~/modules/navigation';
+import { LoggerUI } from '~/modules/logger';
 
 import { useEnvStore } from '~/modules/env';
 
@@ -31,7 +32,11 @@ export const DebugScreen = ({}: DebugScreenProps) => {
   return (
     <Flex padding={16}>
       <DebugKeyValues />
+
       <DebugButtons />
+
+      <Spacer height={16} />
+      <LoggerUI />
     </Flex>
   );
 };
