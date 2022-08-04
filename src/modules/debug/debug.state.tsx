@@ -5,6 +5,7 @@ type DebugState = {
   env: EnvConfig;
   /** change whole env config */
   setEnv: (newEnv: EnvType) => void;
+  /** change individual env key */
   setEnvKey: (args: { key: keyof EnvConfig; type: EnvType }) => void;
 };
 

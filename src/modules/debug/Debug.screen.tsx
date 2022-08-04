@@ -2,10 +2,13 @@ import React from 'react';
 import type { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList, Screen } from '~/modules/navigation';
 
-import { Text, View, Button, Flex } from '~/modules/common';
-import { EnvConfig, EnvType, envTypes } from '~/modules/env';
+import { Text, View, Button, Flex, Spacer } from '~/modules/common';
+import { EnvConfig, envTypes } from '~/modules/env';
 
 import { useDebugStore } from './debug.state';
+import { Alert } from 'react-native';
+
+// this UI sux :p
 
 type DebugScreenProps = StackScreenProps<RootStackParamList, Screen.Debug>;
 
@@ -25,8 +28,18 @@ type EnvKey = keyof EnvConfig;
 const envBlockList: EnvKey[] = [];
 
 export const DebugScreen = ({}: DebugScreenProps) => {
+  return (
+    <Flex padding={16}>
+      <DebugKeyValues />
+      <DebugButtons />
+    </Flex>
+  );
+};
+
+const DebugKeyValues = () => {
   const { env, setEnv, setEnvKey } = useDebugStore();
 
+  // place custom key/values here
   const keyValues: DebugKeyValue[] = [];
 
   // map over `env` object and add to `keyValues`
@@ -43,6 +56,7 @@ export const DebugScreen = ({}: DebugScreenProps) => {
 
   return (
     <>
+      <Text>Change whole env</Text>
       <Flex flexDirection='row'>
         {envTypes.map((envType) => {
           return (
@@ -52,6 +66,8 @@ export const DebugScreen = ({}: DebugScreenProps) => {
           );
         })}
       </Flex>
+
+      <Spacer height={16} />
 
       {/* display key values */}
       {keyValues.map((kv) => {
@@ -78,7 +94,36 @@ export const DebugScreen = ({}: DebugScreenProps) => {
                 })}
               </Flex>
             ) : null}
+
+            <Spacer height={16} />
           </View>
+        );
+      })}
+    </>
+  );
+};
+
+type DebugButtonsProps = {};
+
+const DebugButtons = ({}: DebugButtonsProps) => {
+  // place debug btns here
+  const btns: DebugBtn[] = [
+    {
+      text: 'show alert',
+      onPress() {
+        Alert.alert('what up');
+      },
+    },
+  ];
+
+  return (
+    <>
+      <Text>Buttons</Text>
+      {btns.map((btn) => {
+        return (
+          <Button key={btn.text} onPress={btn.onPress}>
+            {btn.text}
+          </Button>
         );
       })}
     </>
