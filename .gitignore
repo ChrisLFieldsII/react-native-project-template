@@ -65,3 +65,6 @@ buck-out/
 
 # env vars
 .env
+
+# private logger configuration to control logging domain levels, etc
+src/modules/logger/logger.config.ts
