@@ -1,7 +1,7 @@
 import create from 'zustand';
-import { EnvConfig, env, EnvType, envConfigs } from '../env';
+import { EnvConfig, env, EnvType, envConfigs } from './env';
 
-type DebugState = {
+export type EnvState = {
   env: EnvConfig;
   /** change whole env config */
   setEnv: (newEnv: EnvType) => void;
@@ -9,7 +9,7 @@ type DebugState = {
   setEnvKey: (args: { key: keyof EnvConfig; type: EnvType }) => void;
 };
 
-export const useDebugStore = create<DebugState>()((set, get) => ({
+export const useEnvStore = create<EnvState>()((set, get) => ({
   env,
   setEnv(newEnv) {
     const newConfig = envConfigs[newEnv];

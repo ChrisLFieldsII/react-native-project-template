@@ -6,8 +6,7 @@ import { Text, View, Button, Flex, Spacer } from '~/modules/common';
 import { EnvConfig, envTypes } from '~/modules/env';
 import { useNavigation } from '~/modules/navigation';
 
-import { useDebugStore } from './debug.state';
-import { Alert } from 'react-native';
+import { useEnvStore } from '~/modules/env';
 
 // this UI sux :p
 
@@ -38,7 +37,7 @@ export const DebugScreen = ({}: DebugScreenProps) => {
 };
 
 const DebugKeyValues = () => {
-  const { env, setEnv, setEnvKey } = useDebugStore();
+  const { env, setEnv, setEnvKey } = useEnvStore();
 
   // place custom key/values here
   const keyValues: DebugKeyValue[] = [];
